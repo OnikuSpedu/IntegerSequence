@@ -1,10 +1,16 @@
+import java.security.InvalidParameterException;
 import java.util.NoSuchElementException;
 public class Range implements IntegerSequence{
     private int start,end,current;
     public Range(int start,  int end){  
-        this.start = start;
-        this.end = end;
-        this.current = start;
+        if (start <= end) {
+            this.start = start;
+            this.end = end;
+            this.current = start;
+        } else {
+            throw new InvalidParameterException("Start cannot be greater than end.");
+        }
+        
     }
     public void reset(){
         this.current = this.start;
