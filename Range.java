@@ -8,7 +8,7 @@ public class Range implements IntegerSequence{
             this.end = end;
             this.current = start;
         } else {
-            throw new InvalidParameterException("Start cannot be greater than end.");
+            throw new IllegalArgumentException("Start cannot be greater than end.");
         }
         
     }
