@@ -11,6 +11,20 @@ public class ArraySequence implements IntegerSequence{
             data[i] = other[i];
         }
     }
+    public ArraySequence(IntegerSequence otherseq){
+        this.data = new int[otherseq.length()];
+
+        for (int i = 0; i < data.length(); i++) {
+            if(otherseq.hasNext()) {
+                data[i] = otherseq.next();
+            } else {
+                throw new ArrayIndexOutOfBoundsException("Make sure to reset the array");
+            }
+        }
+        
+        otherseq.reset();
+
+    }
 
     public boolean hasNext() {
         return this.currentIndex >= 0 && this.currentIndex < length();

@@ -34,5 +34,10 @@ public class Tester {
         while(as.hasNext()){
             System.out.print(as.next()+", ");
         }
+
+        IntegerSequence asr = new ArraySequence(r);
+        while(asr.hasNext()){
+            System.out.print(asr.next()+", ");
+        }
     }
 }
