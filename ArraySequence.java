@@ -5,13 +5,16 @@ public class ArraySequence implements IntegerSequence{
     private int[] data;
 
     /*Construct the sequence by copying values from the other array into the data array*/
-    public ArraySequence(int[] other){  
+    public ArraySequence(int[] other){
+        reset();  
         this.data = new int[other.length];
         for (int i = 0; i < data.length; i++) {
             data[i] = other[i];
         }
     }
     public ArraySequence(IntegerSequence otherseq){
+        otherseq.reset();
+        
         this.data = new int[otherseq.length()];
 
         for (int i = 0; i < this.length(); i++) {
